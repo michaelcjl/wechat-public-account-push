@@ -192,7 +192,7 @@ export const getStocks = async () => {
       "510300": data[0],
       "510500": data[1],
     }
-    console.error('data111', data)
+    console.error('data111', res)
 
     RUN_TIME_STORAGE[`Stock`] = cloneDeep(result)
 
@@ -267,9 +267,6 @@ export const getHolidaytts = async () => {
 
   if (res.status === 200 && res.data && res.data.code === 0) {
     data = res.data.tts
-
-    console.error('获取下一休息日tts:', res)
-
   } else {
     console.error('获取下一休息日tts: 发生错误', res)
   }
