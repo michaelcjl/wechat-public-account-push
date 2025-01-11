@@ -187,8 +187,10 @@ export const getStocks = async () => {
     const data = res.data
 
     const result = {
-      "510300": data[0]['current'],
-      "510500": data[1]['current'],
+      // "510300": data[0]['current'],
+      // "510500": data[1]['current'],
+      "510300": data[0],
+      "510500": data[1],
     }
 
     RUN_TIME_STORAGE[`Stock`] = cloneDeep(result)
