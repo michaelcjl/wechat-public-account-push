@@ -57,8 +57,7 @@ const TEMPLATE_CONFIG = [
     id: '0003',
     title: '股票之眼',
     desc: `
-      **{{date.DATA}}**
-      
+      🗓️{{date.DATA}}
       下个休息日：{{holidaytts.DATA}}
       
       ---
@@ -67,19 +66,15 @@ const TEMPLATE_CONFIG = [
       天气：{{weather.DATA}}
       
       ---
-      中证500(510500):   {{ }}
-      沪深300(510300):   {{ }}
-      科创50ETF(588000): {{ }}
-      中概互联ETF(513050):{{ }}
-      恒生ETF(159920):   {{  }}
+      中证500(510500):  当前价格: {{ }},  [lower_price: 4.3, higher_price: 7.4 ]
+      沪深300(510300):  当前价格: {{ }}   [lower_price: 3.1, higher_price: 5.7 ]
+      科创50ETF(588000):当前价格: {{ }}   [lower_price: 0.68, higher_price:1.6 ]
+      中概互联ETF(513050):当前价格:{{ }}   [lower_price: 0.82, higher_price:1.53 ]
+      恒生ETF(159920):   当前价格:{{  }}  [lower_price: 0.87, higher_price:1.4 ]
       
 
-      
       ---
       
-
-      
-      ---
 
     `
   },
