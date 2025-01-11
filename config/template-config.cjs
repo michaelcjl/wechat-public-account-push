@@ -55,7 +55,7 @@ const TEMPLATE_CONFIG = [
 
  {
     id: '0003',
-    title: **'股票之眼'**,
+    title: '**股票之眼**',
     desc: `
       🗓️{{date.DATA}}
       ---
