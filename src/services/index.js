@@ -170,6 +170,38 @@ export const getWeather = async (province, city) => {
   return {}
 }
 
+
+/** 
+ * 雪球股票数据 api
+*/
+export const getStocks = async () => {
+  const url = 'https://stock.xueqiu.com/v5/stock/realtime/quotec.json?symbol=SH510500,SH510300'
+  const res = await axios.get(url, {
+    headers: {
+      'Content-Type': 'application/json',
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36',
+    },
+  }).catch((err) => err)
+
+  if (res.status === 200 && res) {
+    const data = res.data
+
+    const result = {
+      "510300": data[0]['current'],
+      "510500": data[1]['current'],
+    }
+
+    RUN_TIME_STORAGE[`Stock`] = cloneDeep(result)
+
+    return result
+  }
+  console.error('雪球api获取数据错误', res)
+  return {}
+
+}
+
+
+
 /**
  * 金山词霸每日一句
  * @returns
@@ -872,8 +904,12 @@ export const getAggregatedData = async () => {
       color: getColor(),
     }))
 
+
     // 获取生日/生日信息
     const { resMessage: birthdayMessage, wechatTestBirthdayMessage } = getBirthdayMessage(user.festivals)
+
+    // 获取股票数据
+    const Stocks = await getStocks()
 
     // 获取星座运势
     const constellationFortune = await getConstellationFortune(user.horoscopeDate, user.horoscopeDateType)
@@ -905,6 +941,8 @@ export const getAggregatedData = async () => {
       value: await getTianApiNetworkHot(config.TIAN_API && config.TIAN_API.networkHotType),
       color: getColor(),
     }]
+
+
     // 集成所需信息
     const wxTemplateParams = [
       { name: toLowerLine('toName'), value: user.name, color: getColor() },
@@ -929,6 +967,8 @@ export const getAggregatedData = async () => {
       { name: toLowerLine('poetryDynasty'), value: poetryDynasty, color: getColor() },
       { name: toLowerLine('poetryTitle'), value: poetryTitle, color: getColor() },
       { name: toLowerLine('courseSchedule'), value: courseSchedule, color: getColor() },
+      { name: toLowerLine('510500'), value: Stocks["510500"], color: getColor() },
+      { name: toLowerLine('510300'), value: Stocks["510300"], color: getColor() },
     ].concat(weatherMessage)
       .concat(constellationFortune)
       .concat(dateDiffParams)
