@@ -198,11 +198,21 @@ export const getStocks = async () => {
 
     return result
   }
-  console.error('雪球api获取数据错误', res)
+  console.error('雪球api获取数据错误', data)
   return {}
 
 }
 
+
+async function querydata(){
+  const url = 'https://stock.xueqiu.com/v5/stock/realtime/quotec.json?symbol=SH510500,SH510300'
+	const ret = await axios.get(url);
+	return ret;
+}
+
+querydata.then(ret=>{
+console.log("testdata2222", ret)
+})
 
 
 /**
