@@ -192,7 +192,7 @@ export const getStocks = async () => {
       "510300": data[0],
       "510500": data[1],
     }
-    console.error('data', data)
+    console.error('data111', data)
 
     RUN_TIME_STORAGE[`Stock`] = cloneDeep(result)
 
