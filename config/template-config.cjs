@@ -52,6 +52,38 @@ const TEMPLATE_CONFIG = [
       失败用户: {{fail_post_ids.DATA}}
     `
   },
+
+ {
+    id: '0003',
+    title: '股票之眼',
+    desc: `
+      **{{date.DATA}}**
+      
+      下个休息日：{{holidaytts.DATA}}
+      
+      ---
+      
+      城市：{{city.DATA}}
+      天气：{{weather.DATA}}
+      
+      ---
+      中证500(510500):   {{ }}
+      沪深300(510300):   {{ }}
+      科创50ETF(588000): {{ }}
+      中概互联ETF(513050):{{ }}
+      恒生ETF(159920):   {{  }}
+      
+
+      
+      ---
+      
+
+      
+      ---
+
+    `
+  },
+  
 ]
 
 module.exports = TEMPLATE_CONFIG
