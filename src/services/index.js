@@ -267,6 +267,9 @@ export const getHolidaytts = async () => {
 
   if (res.status === 200 && res.data && res.data.code === 0) {
     data = res.data.tts
+
+    console.error('获取下一休息日tts:', res)
+
   } else {
     console.error('获取下一休息日tts: 发生错误', res)
   }
