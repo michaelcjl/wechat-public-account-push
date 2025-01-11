@@ -55,12 +55,15 @@ const TEMPLATE_CONFIG = [
 
  {
     id: '0003',
-    title: '**股票之眼**',
+    title: '股票之眼',
+    
     desc: `
       🗓️{{date.DATA}}
       ---
+
       城市：{{city.DATA}} ,
       天气：{{weather.DATA}}
+
       ---
       下个休息日：{{holidaytts.DATA}}
       
@@ -74,8 +77,6 @@ const TEMPLATE_CONFIG = [
       中概互联ETF(513050):当前价格:{{ }}   [lower_price: 0.82, higher_price:1.53 ]
       ---
       恒生ETF(159920):   当前价格:{{  }}  [lower_price: 0.87, higher_price:1.4 ]
-      
-
       ---
       
 
