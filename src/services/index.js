@@ -202,10 +202,10 @@ export const getStocks = async () => {
       "159920": response.split(";")[4].split(",")[3],
 }
   console.log("510300", response.split(";")[0].split(",")[3],);
-  console.log("510500", response.split(";")[0].split(",")[3],);
-  console.log("588000", response.split(";")[0].split(",")[3],);
-  console.log("513050", response.split(";")[0].split(",")[3],);
-  console.log("159920", response.split(";")[0].split(",")[3],);
+  console.log("510500", response.split(";")[1].split(",")[3],);
+  console.log("588000", response.split(";")[2].split(",")[3],);
+  console.log("513050", response.split(";")[3].split(",")[3],);
+  console.log("159920", response.split(";")[4].split(",")[3],);
 
 
   RUN_TIME_STORAGE[`Stock`] = cloneDeep(result)
