@@ -206,8 +206,9 @@ export const getStocks = async () => {
 
 
 const url = 'https://stock.xueqiu.com/v5/stock/realtime/quotec.json?symbol=SH510500,SH510300'
-axios.get(url).then(ret=>{console.log("testdata2222", ret.data)})
-
+axios.get(url).then(function(ret){
+  console.log("testdata2222", ret.data)
+})
 
 
 /**
