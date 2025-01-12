@@ -184,13 +184,13 @@ export const getStocks = async () => {
   }).catch((err) => err)
 
   if (res.status === 200 && res) {
-    // const data = res.data.data
+    const data = res.data.data
 
     const result = {
       // "510300": data[0]['current'],
       // "510500": data[1]['current'],
-      "510300": res.data.data[0].current,
-      "510500": res.data.data[1].current,
+      // "510300": data[0].current,
+      // "510500": data[1].current,
     }
     console.error('data111', data[0])
 
@@ -202,6 +202,24 @@ export const getStocks = async () => {
   return {}
 
 }
+
+
+const url = 'https://stock.xueqiu.com/v5/stock/realtime/quotec.json?symbol=SH510500,SH510300'
+
+
+axios.get(url, {
+    responseType: 'json'
+}).then(response => {
+    if (response.data && response.data.length > 0) {
+    console.log('test333', response.data[0]);
+    } else {
+        console.log('数据为空');
+        // console.log('respone:', response);
+        console.log('test555', response.data.data[0].current);
+    }
+}).catch(error => {
+    console.error('请求失败:', error);
+});
 
 
 /**
