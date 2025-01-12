@@ -185,14 +185,15 @@ export const getStocks = async () => {
 
   if (res.status === 200 && res) {
   const response = res.data.data
-  
+  console.log('response keys:', Object.keys(response))
+  console.log("attr", Object.getOwnPropertyNames(response));
   const result = {
-      "510300": response.slice(0,  1)[0].current,
+      "510300": response['0'].current,
       // "510500": data[1]['current'],
       // "510300": data[0].current,
       // "510500": data[1].current,
 }
-console.log('data111', response.slice(1,  2)[0])
+console.log('data111', response['0'])
 
   // RUN_TIME_STORAGE[`Stock`] = cloneDeep(result)
 
