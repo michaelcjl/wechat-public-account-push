@@ -184,15 +184,15 @@ export const getStocks = async () => {
   }).catch((err) => err)
 
   if (res.status === 200 && res) {
-    const data = res.data
+    const data = res.data.data
 
     const result = {
       // "510300": data[0]['current'],
       // "510500": data[1]['current'],
-      "510300": data[0],
-      "510500": data[1],
+      "510300": data[0].current,
+      "510500": data[1].current,
     }
-    console.error('data111', res)
+    console.error('data111', data[0])
 
     RUN_TIME_STORAGE[`Stock`] = cloneDeep(result)
 
@@ -202,26 +202,6 @@ export const getStocks = async () => {
   return {}
 
 }
-
-
-// import axios from 'axios';
-const url = 'https://stock.xueqiu.com/v5/stock/realtime/quotec.json?symbol=SH510500,SH510300'
-// axios.get(url).then(function(ret){
-//   console.log("testdata2222", ret.data)
-// })
-
-axios.get(url, {
-  responseType: 'json'
-}).then(response => {
-    if (response.data[0] && response.data[0].length > 0) {
-      console.log('test333', response.data[0]);
-    } else {
-      console.log('数据为空');
-    }
-  })
-  .catch(error => {
-    console.error('请求失败:', error);
-  });
 
 
 /**
