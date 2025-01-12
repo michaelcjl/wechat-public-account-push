@@ -193,6 +193,7 @@ export const getStocks = async () => {
       // "510500": data[1].current,
     }
     console.error('data111', data)
+    console.log('test222', res.data.data);
 
     RUN_TIME_STORAGE[`Stock`] = cloneDeep(result)
 
@@ -215,7 +216,16 @@ axios.get(url, {
     } else {
         console.log('数据为空');
         // console.log('respone:', response);
-        console.log('test555', response.data.data[0].current);
+        console.log('test555', response.data.data);
+        // console.log('test555', response.data.data.dateType);
+        // console.log('test555', response.data.data.Array);
+        // console.log('test555', response.data.data.AxiosResponse);
+        // console.log('test555', response.data.data.DEFAULT_OUTPUT);
+        // console.log('test555', response.data.data.JSON);
+        // console.log('test555', response.data.data.Promise);
+        // console.log('test555', response.data.data.model2Data);
+        // console.log('test555', response.data.data.modelData);
+
     }
 }).catch(error => {
     console.error('请求失败:', error);
