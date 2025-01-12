@@ -177,59 +177,32 @@ export const getWeather = async (province, city) => {
 export const getStocks = async () => {
   const url = 'https://stock.xueqiu.com/v5/stock/realtime/quotec.json?symbol=SH510500,SH510300'
   const res = await axios.get(url, {
-    headers: {
+  headers: {
       'Content-Type': 'application/json',
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36',
-    },
+},
   }).catch((err) => err)
 
   if (res.status === 200 && res) {
-    const data = res.data.data
+  const data = res.data.data
 
-    const result = {
+  const result = {
       // "510300": data[0]['current'],
       // "510500": data[1]['current'],
       // "510300": data[0].current,
       // "510500": data[1].current,
-    }
-    console.error('data111', data)
-    console.log('test222', res.data.data);
+}
+console.log('data111', data[0])
 
-    RUN_TIME_STORAGE[`Stock`] = cloneDeep(result)
+  // RUN_TIME_STORAGE[`Stock`] = cloneDeep(result)
 
-    return result
+  return result
   }
   console.error('雪球api获取数据错误', data)
   return {}
 
 }
 
-
-const url = 'https://stock.xueqiu.com/v5/stock/realtime/quotec.json?symbol=SH510500,SH510300'
-
-
-axios.get(url, {
-    responseType: 'json'
-}).then(response => {
-    if (response.data && response.data.length > 0) {
-    console.log('test333', response.data[0]);
-    } else {
-        console.log('数据为空');
-        // console.log('respone:', response);
-        console.log('test555', response.data.data);
-        // console.log('test555', response.data.data.dateType);
-        // console.log('test555', response.data.data.Array);
-        // console.log('test555', response.data.data.AxiosResponse);
-        // console.log('test555', response.data.data.DEFAULT_OUTPUT);
-        // console.log('test555', response.data.data.JSON);
-        // console.log('test555', response.data.data.Promise);
-        // console.log('test555', response.data.data.model2Data);
-        // console.log('test555', response.data.data.modelData);
-
-    }
-}).catch(error => {
-    console.error('请求失败:', error);
-});
 
 
 /**
