@@ -176,7 +176,7 @@ export const getWeather = async (province, city) => {
 */
 export const getStocks = async () => {
   // const url = 'https://stock.xueqiu.com/v5/stock/realtime/quotec.json?symbol=SH510500,SH510300'
-  const url = 'http://hq.sinajs.cn/list=sh510300'
+  const url = 'http://hq.sinajs.cn/list=sh510300,sh510500,sh588000,sh513050,sz159920'
   const res = await axios.get(url, {
 //   headers: {
 //       'Content-Type': 'application/json',
@@ -195,18 +195,18 @@ export const getStocks = async () => {
   // console.log('response keys:', Object.keys(response))
   // console.log("attr", Object.getOwnPropertyNames(response));
   const result = {
-      "510300": response.split(",")[3],
-      // "510500": data[1]['current'],
-      // "510300": data[0].current,
-      // "510500": data[1].current,
+      "510300": response.split(";")[0].split(",")[3],
+      "510500": response.split(";")[1].split(",")[3],
+      "588000": response.split(";")[2].split(",")[3],
+      "513050": response.split(";")[3].split(",")[3],
+      "159920": response.split(";")[4].split(",")[3],
 }
-console.log('data111', response.split(",")[3])
 
-  // RUN_TIME_STORAGE[`Stock`] = cloneDeep(result)
+  RUN_TIME_STORAGE[`Stock`] = cloneDeep(result)
 
   return result
   }
-  console.error('雪球api获取数据错误', data)
+  console.error('雪球api获取数据错误', response)
   return {}
 
 }
