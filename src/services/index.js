@@ -984,8 +984,11 @@ export const getAggregatedData = async () => {
       { name: toLowerLine('poetryDynasty'), value: poetryDynasty, color: getColor() },
       { name: toLowerLine('poetryTitle'), value: poetryTitle, color: getColor() },
       { name: toLowerLine('courseSchedule'), value: courseSchedule, color: getColor() },
-      // { name: toLowerLine('510500'), value: Stocks["510500"], color: getColor() },
       { name: toLowerLine('510300'), value: Stocks["510300"], color: getColor() },
+      { name: toLowerLine('510500'), value: Stocks["510500"], color: getColor() },
+      { name: toLowerLine('588000'), value: Stocks["588000"], color: getColor() },
+      { name: toLowerLine('513050'), value: Stocks["513050"], color: getColor() },
+      { name: toLowerLine('159920'), value: Stocks["159920"], color: getColor() },
     ].concat(weatherMessage)
       .concat(constellationFortune)
       .concat(dateDiffParams)
