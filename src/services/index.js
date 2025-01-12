@@ -213,12 +213,10 @@ const url = 'https://stock.xueqiu.com/v5/stock/realtime/quotec.json?symbol=SH510
 axios.get(url, {
   responseType: 'json'
 }).then(response => {
-    if (response.data && response.data.length > 0) {
-      console.log(response.data);
+    if (response.data[0] && response.data[0].length > 0) {
+      console.log('test333', response.data[0]);
     } else {
       console.log('数据为空');
-      console.log(JSON.parse(response));
-      console.log(JSON.parse(response.data));
     }
   })
   .catch(error => {
