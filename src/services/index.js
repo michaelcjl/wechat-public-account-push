@@ -184,15 +184,15 @@ export const getStocks = async () => {
   }).catch((err) => err)
 
   if (res.status === 200 && res) {
-  const data = res.data.data
+  const respone = res.data.data
   
   const result = {
-      "510300": data?.["0"].current,
+      "510300": respone["0"].current,
       // "510500": data[1]['current'],
       // "510300": data[0].current,
       // "510500": data[1].current,
 }
-console.log('data111', data?.["0"])
+console.log('data111', respone["0"])
 
   // RUN_TIME_STORAGE[`Stock`] = cloneDeep(result)
 
