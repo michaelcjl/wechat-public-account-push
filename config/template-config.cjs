@@ -71,7 +71,7 @@ const TEMPLATE_CONFIG = [
       沪深300(510300):  当前价格: {{510300.DATA}}   [lower_price: 3.1, higher_price: 5.7 ]
 
       ---
-      中证500(510500):  当前价格: {{510500.DATA}},  [lower_price: 4.3, higher_price: 7.4 ]
+      中证500(510500):  当前价格: {{510500.DATA}}  [lower_price: 4.3, higher_price: 7.4 ]
 
       ---
       科创50ETF(588000):当前价格: {{588000.DATA}}   [lower_price: 0.68, higher_price:1.6 ]
