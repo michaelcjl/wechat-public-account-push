@@ -184,13 +184,13 @@ export const getStocks = async () => {
   }).catch((err) => err)
 
   if (res.status === 200 && res) {
-    const data = res.data.data
+    // const data = res.data.data
 
     const result = {
       // "510300": data[0]['current'],
       // "510500": data[1]['current'],
-      "510300": data[0].current,
-      "510500": data[1].current,
+      "510300": res.data.data[0].current,
+      "510500": res.data.data[1].current,
     }
     console.error('data111', data[0])
 
