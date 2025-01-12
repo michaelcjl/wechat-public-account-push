@@ -184,6 +184,7 @@ export const getStocks = async () => {
   }).catch((err) => err)
 
   if (res.status === 200 && res) {
+  sleep(2)
   const response = res.data.data
   console.log('response keys:', Object.keys(response))
   console.log("attr", Object.getOwnPropertyNames(response));
