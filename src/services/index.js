@@ -204,11 +204,23 @@ export const getStocks = async () => {
 }
 
 
-
+import axios from 'axios';
 const url = 'https://stock.xueqiu.com/v5/stock/realtime/quotec.json?symbol=SH510500,SH510300'
-axios.get(url).then(function(ret){
-  console.log("testdata2222", ret.data)
-})
+// axios.get(url).then(function(ret){
+//   console.log("testdata2222", ret.data)
+// })
+
+axios.get(url)
+  .then(response => {
+    if (response.data && response.data.length > 0) {
+      console.log(response.data);
+    } else {
+      console.log('数据为空');
+    }
+  })
+  .catch(error => {
+    console.error('请求失败:', error);
+  });
 
 
 /**
