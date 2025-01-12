@@ -175,26 +175,32 @@ export const getWeather = async (province, city) => {
  * 雪球股票数据 api
 */
 export const getStocks = async () => {
-  const url = 'https://stock.xueqiu.com/v5/stock/realtime/quotec.json?symbol=SH510500,SH510300'
+  // const url = 'https://stock.xueqiu.com/v5/stock/realtime/quotec.json?symbol=SH510500,SH510300'
+  const url = 'http://hq.sinajs.cn/list=sh510300'
   const res = await axios.get(url, {
+//   headers: {
+//       'Content-Type': 'application/json',
+//       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36',
+// },
   headers: {
-      'Content-Type': 'application/json',
-      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36',
-},
+    'referer':'https://finance.sina.com.cn/',
+    'User-Agent': 'ua.random',
+  },
   }).catch((err) => err)
 
   if (res.status === 200 && res) {
-  sleep(2)
-  const response = res.data.data
-  console.log('response keys:', Object.keys(response))
-  console.log("attr", Object.getOwnPropertyNames(response));
+  
+  // const response = res.data.data
+  const response = res.data
+  // console.log('response keys:', Object.keys(response))
+  // console.log("attr", Object.getOwnPropertyNames(response));
   const result = {
-      "510300": response['0'].current,
+      "510300": response.split(",")[3],
       // "510500": data[1]['current'],
       // "510300": data[0].current,
       // "510500": data[1].current,
 }
-console.log('data111', response['0'])
+console.log('data111', response.split(",")[3])
 
   // RUN_TIME_STORAGE[`Stock`] = cloneDeep(result)
 
