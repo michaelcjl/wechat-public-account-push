@@ -187,7 +187,7 @@ export const getStocks = async () => {
   const data = res.data.data
 
   const result = {
-      // "510300": data[0]['current'],
+      "510300": data[0].current,
       // "510500": data[1]['current'],
       // "510300": data[0].current,
       // "510500": data[1].current,
@@ -970,7 +970,7 @@ export const getAggregatedData = async () => {
       { name: toLowerLine('poetryDynasty'), value: poetryDynasty, color: getColor() },
       { name: toLowerLine('poetryTitle'), value: poetryTitle, color: getColor() },
       { name: toLowerLine('courseSchedule'), value: courseSchedule, color: getColor() },
-      { name: toLowerLine('510500'), value: Stocks["510500"], color: getColor() },
+      // { name: toLowerLine('510500'), value: Stocks["510500"], color: getColor() },
       { name: toLowerLine('510300'), value: Stocks["510300"], color: getColor() },
     ].concat(weatherMessage)
       .concat(constellationFortune)
