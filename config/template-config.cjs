@@ -68,19 +68,19 @@ const TEMPLATE_CONFIG = [
       下个休息日：{{holidaytts.DATA}}
       
       ---
-      沪深300(510300):  当前价格: {{510300.DATA}}   [lower_price: 3.1, higher_price: 5.7 ]
+      沪深300(510300):  当前价格: {{510300.DATA}}   [lower_price: 3.28, higher_price: 4.23 ]
 
       ---
-      中证500(510500):  当前价格: {{510500.DATA}}  [lower_price: 4.3, higher_price: 7.4 ]
+      中证500(510500):  当前价格: {{510500.DATA}}  [lower_price: 4.52, higher_price: 6.15 ]
 
       ---
-      科创50ETF(588000):当前价格: {{588000.DATA}}   [lower_price: 0.68, higher_price:1.6 ]
+      科创50ETF(588000):当前价格: {{588000.DATA}}   [lower_price: 0.705, higher_price:1.08 ]
 
       ---
-      中概互联ETF(513050):当前价格:{{513050.DATA}}   [lower_price: 0.82, higher_price:1.53 ]
+      中概互联ETF(513050):当前价格:{{513050.DATA}}   [lower_price: 0.87, higher_price:1.20 ]
 
       ---
-      恒生ETF(159920):   当前价格:{{159920.DATA}}  [lower_price: 0.87, higher_price:1.4 ]
+      恒生ETF(159920):   当前价格:{{159920.DATA}}  [lower_price: 0.96, higher_price:1.23 ]
       
       ---
       
